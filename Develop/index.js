@@ -2,10 +2,10 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
-
+console.log(inquirer);
 // TODO: Create an array of questions for user input
-inquirer
-    .prompt([
+const promptUser = projectData =>  {
+    return inquirer.prompt([
         {
             type: 'input',
             name: 'title',
@@ -116,8 +116,15 @@ inquirer
                 }
             }
         }
-])
-.then(answers => console.log(answers));
+    ])
+    // .then (response => {
+    //     return projectData;
+    // }) 
+}
+promptUser()
+    .then(portfolioData => {
+        console.log(portfolioData);
+    });
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
