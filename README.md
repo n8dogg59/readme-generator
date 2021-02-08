@@ -1,4 +1,26 @@
-# Professional README Generator Starter Code
+# Readme Generator
 
-[How to create a Professional README](./readme-guide.md)
-# readme-generator
+  
+  ## Purpose 
+  
+  This project created a readme in node.js.  The user is prompted to answer a number of questions and then the readme takes those answers and creates the readme file.  
+  
+  
+  ## Features
+  * This is the first time using node js and creating a readme without actually typing anything into the readme
+  * This is also the first time using arrows functions.
+  
+  ## Built With
+  * Node.js
+  * Javascript
+  * npm inquirer
+
+  ## Github Repository
+  https://github.com/n8dogg59/readme-generator
+
+
+  ## Demonstration
+  To view a demonstration of how this application works please click on this link https://drive.google.com/file/d/10HN-5P1iNq_o9175pzrGV3aeZ_nSfXdb/view
+
+  
+  
