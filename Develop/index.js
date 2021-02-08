@@ -2,7 +2,10 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
-console.log(inquirer);
+let badge;
+let license;
+console.log(generateMarkdown);
+
 // TODO: Create an array of questions for user input
 const promptUser = projectData =>  {
     return inquirer.prompt([
@@ -59,9 +62,17 @@ const promptUser = projectData =>  {
             }
         },
         {
-            type:'input',
+            type:'list',
             name:'license',
-            message: 'Please enter the license information for this application.',
+            message: 'Please select the license information for this application.',
+            choices: [
+                "MIT",
+                "Apache-2.0",
+                "Mozilla",
+                "ISC",
+                "None"
+            ],
+            default: "None",
             validate: licenseInput => {
                 if (licenseInput) {
                 return true;
@@ -71,11 +82,19 @@ const promptUser = projectData =>  {
                 }
             }
         },
+        
         {
-            type:'confirm',
+            type:'input',
             name:'contribute',
-            message: 'Would you like other developers to be able to contribute to this project?',
-            default: false
+            message: 'Who contributed to the development of this application?',
+            validate: contributeInput => {
+                if (contributeInput) {
+                return true;
+                } else {
+                console.log('You need to provide the names of contributors to this application!');
+                return false;
+                }
+            }
         },
         {
             type:'input',
@@ -117,20 +136,21 @@ const promptUser = projectData =>  {
             }
         }
     ])
-    // .then (response => {
-    //     return projectData;
-    // }) 
-}
-promptUser()
-    .then(portfolioData => {
-        console.log(portfolioData);
+    .then (response => {
+        var projectData = response;
+        init("README.md", generateMarkdown(projectData, badge, license));
     });
+}
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+promptUser();
 
 // TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
+function init(fileName, projectData) {
+    fs.writeFile(fileName, projectData, err => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("Readme Created!")
+        }
+    })
+}
