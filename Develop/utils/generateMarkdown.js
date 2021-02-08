@@ -83,8 +83,14 @@ const generateMarkdown = (projectData) => {
 
 
   ## Questions
-  If you have further questions please check out my github page at https://github.com/${projectData.question}/readme-generator
+  If you have further questions please check out my github page at https://github.com/${projectData.question}
   If there are further questions you can email me at ${projectData.email}.
+  
+
+  ## Demonstration
+  To view a demonstration of how this application works please click here.
+
+  
   `;
 }
 

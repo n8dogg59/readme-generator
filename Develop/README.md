@@ -41,6 +41,12 @@
 
 
   ## Questions
-  If you have further questions please check out my github page at https://github.com/n8dogg59/readme-generator
+  If you have further questions please check out my github page at https://github.com/n8dogg59
   If there are further questions you can email me at imnotgivingmyrealemail@aol.com.org.
+  
+
+  ## Demonstration
+  To view a demonstration of how this application works please click here.
+
+  
   
